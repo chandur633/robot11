@@ -2,19 +2,15 @@ squarechallenge
 
 #include<PRIZM.h>
 PRIZM prizm;
-
 void setup() {
   prizm.PrizmBegin();
   prizm.setMotorInvert(1,1);
 }
-
 void loop() {
-  
   for(int x=0;x<=3;x++)
   {
     forward();
     rightturn();
-    
   }
   prizm.PrizmEnd();
 }
@@ -45,7 +41,6 @@ prizm.setMotorInvert(1,1);
 void loop() {
   if(prizm.readLineSensor(3)==0){
     prizm.setMotorPowers(35,35);
-    
   }
   if(prizm.readLineSensor(3)==1){
     prizm.setMotorPowers(125,125);
@@ -54,7 +49,6 @@ void loop() {
       delay(500);
       prizm.setRedLED(LOW);
       delay(500);
-      
     }
   }
 }
@@ -71,13 +65,11 @@ PRIZM prizm;
 void setup() {
   prizm.PrizmBegin();
   prizm.setMotorInvert(1,1);
-  
 }
 void loop() {
   if(prizm.readSonicSensorCM(4)>25)
   {
     prizm.setMotorPowers(50,50);
-  
   }
   else
   {
@@ -97,13 +89,11 @@ PRIZM prizm;
 void setup() {
   prizm.PrizmBegin();
   prizm.setMotorInvert(1,1);
-  
 }
 void loop() {
   if(prizm.readSonicSensorCM(4)>25)
   {
     prizm.setMotorPowers(50,50);
-  
   }
   else
   {
@@ -115,33 +105,28 @@ void loop() {
 
 
 
+
 obstacleavoider(easycode)
+
+
 
 #include<PRIZM.h>
 PRIZM prizm;
 void setup() {
   prizm.PrizmBegin();
   prizm.setMotorInvert(1,1);
-  
 }
 void loop() {
   if(prizm.readSonicSensorCM(4)>25)
   {
     prizm.setMotorPowers(35,35);
-    
-  
   }
   else
   {
    prizm.setMotorPowers(-35,-35);
     delay(1000);
-    
     prizm.setMotorPowers(75,125);
     delay(1000);
-    
-    
-    
-    
   }
 }
 
@@ -151,17 +136,16 @@ void loop() {
 
 lightultrasonic semsor
 
+
+
 #include<PRIZM.h>
 PRIZM prizm;
 void setup(){
   prizm.PrizmBegin();
   prizm.setMotorInvert(1,1);
-  
 }
 void loop(){
   if(prizm.readSonicSensorCM(4)>25){
-    
-  
     while(prizm.readLineSensor(3)==1){
     prizm.setMotorPowers(0,20);
     delay(100);
@@ -173,9 +157,7 @@ void loop(){
   }
   else{
     prizm.setMotorPowers(125,125);
-    
   }
-  
 }
 \
 
@@ -193,13 +175,11 @@ void setup() {
 Serial.begin(9600);
 prizm.PrizmBegin();
 }
-
 void loop() {
 prizm.setMotorPower(1,50);
 float y=prizm.readBatteryVoltage();
 Serial.print(y/100);
 Serial.print(",");
-
 delay(250);
 float x=prizm.readMotorCurrent(1);
 Serial.print(x);
@@ -313,7 +293,6 @@ rturn (478);
 Strline (3928);
 }
 }
-
 void strline (int encodercount)
 {
 prizm.resetEncoders();
